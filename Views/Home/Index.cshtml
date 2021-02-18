@@ -1,0 +1,40 @@
+﻿@*View for main marketing page*@
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+@model IQueryable<Book>
+
+<div class="text-center" style="position:relative">
+    <h1 class="display-4">Welcome to the Next Amazon</h1>
+
+    <br />
+
+    <table style="border:solid; width:95%; margin-left:auto; margin-right:auto; background-color:black; color:white" class="table">
+        <thead style="border:solid">
+            <tr><th>Title  </th><th>Author  </th><th>Publisher </th><th>ISBN  </th><th>Classification/Category  </th><th>Price  </th></tr>
+        </thead>
+        <tbody style="border:solid">
+
+            @*Function builds each row from SQL database*@
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td style="border-bottom:solid 1px">@x.Title</td>
+                    <td style="border-bottom:solid 1px">@x.Author</td>
+                    <td style="border-bottom:solid 1px">@x.Publisher</td>
+                    <td style="border-bottom:solid 1px">@x.ISBN</td>
+                    <td style="border-bottom:solid 1px">@x.ClassificationCategory</td>
+                    <td style="border-bottom:solid 1px" class="badge badge-pill badge-primary">$@x.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+    <br />
+    <br />
+
+    <p>Click Background for surprise!</p>
+</div>
