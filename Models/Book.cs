@@ -28,10 +28,15 @@ namespace Assignment5.Models
         public string ISBN { get; set; }
 
         [Required]
-        public string ClassificationCategory { get; set; }
+        public string Classification { get; set; }
+
+        [Required]
+        public string Category { get; set; }
 
         [Required]
         public double Price { get; set; }
+
+        public int PgNum { get; set; }
 
 
     }

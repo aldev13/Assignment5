@@ -6,16 +6,31 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@ViewData["Title"] - Assignment5</title>
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </head>
     <body>
-        <canvas id='canv' style="position:absolute"></canvas>
+
+        <h1 class="display-4 bg-dark text-white p-2 text-center">Welcome to the Next Amazon</h1>
+
+        <div class="row m-1 p-1">
+            <div id="sidebar" class="col-3">
+                <h1>Book List</h1>
+            </div>
+        </div>
+
+        <div class="col-8">
             @RenderBody()
+        </div>
 
         <footer class="footer">&copy;2021 BetterThanAmazon</footer>
-        <script src="~/js/site.js"></script>
     </body>
 </html>
+
+@*Extra Styles Used:
+    display-4
+    footer
+    bg-light
+    font-weight-bold
+    *@
