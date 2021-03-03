@@ -1,0 +1,19 @@
+﻿@model Book
+
+<div class="card card-outline-primary m-1 p-1 bg-light">
+    <div class="p-1">
+
+        <span class="badge badge-pill badge-primary" style="float:right; font-size:15px">
+            <p>$@Model.Price</p>
+        </span>
+
+        <h4>@Model.Title</h4>
+        <p class="font-weight-bold">Author: @Model.Author</p>
+
+        <p>Publisher: @Model.Publisher          ISBN: @Model.ISBN</p>
+
+        <p>Class: @Model.Classification           Genre: @Model.Category</p>
+
+        <p>Number of Pages: @Model.PgNum</p>
+    </div>
+</div>

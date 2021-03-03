@@ -11,26 +11,13 @@
 @*Function builds each row from SQL database*@
 @foreach (var x in Model.Books)
     {
-    <div class="card card-outline-primary m-1 p-1 bg-light">
-        <div class="p-1">
-
-            <span class="badge badge-pill badge-primary" style="float:right; font-size:15px">
-                <p>$@x.Price</p>
-            </span>
-
-            <h4>@x.Title</h4>
-            <p class="font-weight-bold">Author: @x.Author</p>
-
-            <p>Publisher: @x.Publisher          ISBN: @x.ISBN</p>
-
-            <p>Class: @x.Classification           Genre: @x.Category</p>
-
-            <p>Number of Pages: @x.PgNum</p>
-        </div>
-    </div>
+        <partial name="BookList" model="x" />
     }
 
 <br />
 
-<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark"
-        page-class-selected="btn-primary"></div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" 
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" page-url-genre="@Model.CurrentCategory">
+
+</div>
