@@ -51,7 +51,7 @@ namespace Assignment5.Infrastructure
                 //dynamically builds page numbers to add to html
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
 
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
