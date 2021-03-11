@@ -22,7 +22,7 @@ namespace Assignment5.Models
         [Required]
         public string Publisher { get; set; }
 
-        [DataType(DataType.Custom)]
+        //[DataType(DataType.Custom)]
         [Required]
         [RegularExpression(@"^\(?[0-9]{3}\?[-. ]?([0-9]{10})$")]
         public string ISBN { get; set; }

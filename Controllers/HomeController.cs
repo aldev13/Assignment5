@@ -24,20 +24,20 @@ namespace Assignment5.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string genre, int page = 1)
+        public IActionResult Index(string genre, int pageNum = 1)
         {
             return View(new ProjectListViewModel
             {
                 Books = _repository.Books
                     .Where(b => genre == null || b.Category == genre)
                     .OrderBy(p => p.Id)
-                    .Skip((page - 1) * PageSize)
+                    .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize)
                 ,
 
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = genre == null ? _repository.Books.Count() :
                     _repository.Books.Where(x => x.Category == genre).Count()
